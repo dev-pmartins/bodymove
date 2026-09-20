@@ -46,23 +46,20 @@ WhatsApp: `+55 11 98506-2758`
 
 ## Integrações sem “sistema”
 
-### Google Forms → Sheet → site (contato + slides)
+### Google Apps Script → Sheet (contato + slides + treino)
 
-O front **não lê o Forms diretamente**. O fluxo é:
+Endpoint JSON (deploy do script): `VITE_GOOGLE_SCRIPT_URL`
 
-1. Google Form (ou edição manual) grava em uma **Google Sheet**.
-2. Aba publicada como CSV (`Arquivo → Compartilhar → Publicar na web`).
-3. URL em `VITE_GOOGLE_SHEET_CSV_URL` + `VITE_SITE_CONTENT_MODE=live`.
+Estrutura atual do retorno:
 
-Campos suportados hoje:
+- `whatsapp`, `telefone`, `endereco` — arrays (usa o 1º item)
+- `slide`, `slide_links`, `slide_titulo`, `slide_desc`, `slide_calltoaction` — arrays alinhados por índice
+- `segunda` … `sexta` — linhas do treino (`nome:detalhe` opcional)
 
-- telefone, whatsapp, whatsapp_digits
-- endereço (linha, bairro, cidade, UF, CEP)
-- slides: título, subtítulo, `imagem_url`, `link_url`, CTA
+Cache: `localStorage` chave `bodymove:cms:v1`, TTL via `VITE_CMS_CACHE_TTL_MS` (padrão 60000 ms).
 
-Modelo CSV: `docs/google-sheet-modelo.csv`  
-Parser: `src/integrations/googleSheet.ts`  
-Mock ativo por padrão: `src/data/mock/siteContent.ts`
+Código: `src/integrations/googleAppsScript.ts`, `src/lib/localCache.ts`  
+Modo: `VITE_SITE_CONTENT_MODE=live` (padrão)
 
 ### Instagram
 

@@ -13,17 +13,17 @@ import { mockProducts } from '../data/mock/products'
 import { mockTreinoDoDia } from '../data/mock/treino'
 import { mockTransformations } from '../data/mock/transformations'
 import { mockSiteContent } from '../data/mock/siteContent'
+import { useCms } from '../hooks/useCms'
 import { useInstagramFeed } from '../hooks/useInstagramFeed'
-import { useSiteContent } from '../hooks/useSiteContent'
 import { whatsappUrl } from '../lib/links'
 import './Home.css'
 
 export function HomePage() {
-  const site = useSiteContent()
+  const cms = useCms()
   const ig = useInstagramFeed()
 
-  const content =
-    site.status === 'loading' ? mockSiteContent : site.data
+  const content = cms.status === 'ready' ? cms.content : mockSiteContent
+  const treino = cms.status === 'ready' ? cms.treino : mockTreinoDoDia
   const igPosts = ig.status === 'loading' ? [] : ig.data
   const igLoading = ig.status === 'loading'
   const waHref = whatsappUrl(
@@ -75,7 +75,7 @@ export function HomePage() {
 
         <CampaignSlider slides={content.slides} />
         <ProductsSection products={mockProducts} />
-        <TreinoDoDiaSection treino={mockTreinoDoDia} />
+        <TreinoDoDiaSection treino={treino} />
         <TransformationsSection items={mockTransformations} />
         <InstagramFeedSection posts={igPosts} loading={igLoading} />
         <UnidadeSection contact={content.contact} />
