@@ -1,0 +1,11 @@
+tipo,chave,valor,titulo,subtitulo,imagem_url,link_url,cta
+config,telefone,+55 11 98506-2758,,,,,
+config,whatsapp,+55 11 98506-2758,,,,,
+config,whatsapp_digits,5511985062758,,,,,
+config,endereco_linha,Av. Tiradentes 2150,,,,,
+config,endereco_bairro,Jardim Santa Edwirges,,,,,
+config,endereco_cidade,Guarulhos,,,,,
+config,endereco_uf,SP,,,,,
+config,endereco_cep,07113-001,,,,,
+slide,,,Primeira semana,Condição especial,/images/bg01.png,https://wa.me/5511985062758,Quero essa oferta
+slide,,,Aulas de Judô,Turmas abertas,/images/bg02.png,https://wa.me/5511985062758,Falar no WhatsApp

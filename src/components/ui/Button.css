@@ -1,0 +1,95 @@
+.bm-btn {
+  --bm-btn-pad-y: 0.85rem;
+  --bm-btn-pad-x: 1.35rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: var(--bm-btn-pad-y) var(--bm-btn-pad-x);
+  border: 1px solid transparent;
+  border-radius: var(--bm-radius-sm);
+  font-family: var(--bm-font-body);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color var(--bm-duration) var(--bm-ease-out),
+    color var(--bm-duration) var(--bm-ease-out),
+    border-color var(--bm-duration) var(--bm-ease-out),
+    box-shadow var(--bm-duration) var(--bm-ease-out),
+    transform var(--bm-duration-fast) var(--bm-ease-out);
+}
+
+.bm-btn:active {
+  transform: translateY(1px);
+}
+
+.bm-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.bm-btn--lg {
+  --bm-btn-pad-y: 1.05rem;
+  --bm-btn-pad-x: 1.7rem;
+  font-size: 0.875rem;
+}
+
+/* Primary — acid fill */
+.bm-btn--primary {
+  background: var(--bm-acid);
+  color: var(--bm-text-on-acid);
+  border-color: var(--bm-acid);
+  box-shadow: 0 0 0 0 transparent;
+}
+
+.bm-btn--primary:hover:not(:disabled) {
+  background: #9ef55f;
+  border-color: #9ef55f;
+  box-shadow: 0 0 22px var(--bm-acid-glow-soft);
+}
+
+.bm-btn--primary:focus-visible {
+  outline: none;
+  box-shadow: var(--bm-neon-ring);
+}
+
+/* Secondary — dark + neon border on hover */
+.bm-btn--secondary {
+  background: var(--bm-surface);
+  color: var(--bm-text);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 0 0 transparent;
+}
+
+.bm-btn--secondary:hover:not(:disabled) {
+  border-color: var(--bm-acid);
+  color: var(--bm-text);
+  background: #0a0d0a;
+  box-shadow: var(--bm-neon-ring);
+}
+
+.bm-btn--secondary:focus-visible {
+  outline: none;
+  box-shadow: var(--bm-neon-ring);
+}
+
+/* Ghost — text/outline light */
+.bm-btn--ghost {
+  background: transparent;
+  color: var(--bm-acid);
+  border-color: transparent;
+}
+
+.bm-btn--ghost:hover:not(:disabled) {
+  border-color: var(--bm-border-strong);
+  box-shadow: var(--bm-neon-soft);
+}

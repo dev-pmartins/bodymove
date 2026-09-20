@@ -1,0 +1,35 @@
+.site-footer {
+  border-top: 1px solid var(--bm-border);
+  padding: var(--bm-space-7) 0;
+  background: #000;
+}
+
+.site-footer__inner {
+  display: grid;
+  gap: var(--bm-space-2);
+}
+
+.site-footer__brand {
+  margin: 0;
+  font-size: var(--bm-text-h2);
+  color: var(--bm-acid);
+}
+
+.site-footer__inner p {
+  margin: 0;
+}
+
+.site-footer__links {
+  margin-top: var(--bm-space-3) !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: var(--bm-text-sm);
+  color: var(--bm-text-muted);
+}
+
+.site-footer__links a {
+  color: var(--bm-acid);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

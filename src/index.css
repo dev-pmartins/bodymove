@@ -1,0 +1,4 @@
+/* App-level resets beyond tokens live here if needed. */
+#root {
+  min-height: 100vh;
+}

@@ -1,0 +1,48 @@
+.transform__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--bm-space-4);
+}
+
+.transform__card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bm-surface);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.transform__photo {
+  aspect-ratio: 4 / 3;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(0.85) contrast(1.05);
+}
+
+.transform__body {
+  display: grid;
+  gap: var(--bm-space-3);
+  padding: var(--bm-space-5);
+  flex: 1;
+}
+
+.transform__quote {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.transform__name {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: var(--bm-text-sm);
+  color: var(--bm-acid);
+}
+
+@media (max-width: 900px) {
+  .transform__grid {
+    grid-template-columns: 1fr;
+  }
+}

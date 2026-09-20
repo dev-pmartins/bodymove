@@ -1,0 +1,22 @@
+.wa-float {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+  background: var(--bm-acid);
+  color: var(--bm-text-on-acid);
+  box-shadow: 0 0 0 0 transparent, 0 8px 28px rgba(0, 0, 0, 0.45);
+  transition:
+    transform var(--bm-duration) var(--bm-ease-out),
+    box-shadow var(--bm-duration) var(--bm-ease-out);
+}
+
+.wa-float:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: var(--bm-neon-ring);
+}
