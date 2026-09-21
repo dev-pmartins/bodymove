@@ -8,7 +8,8 @@ export function SiteFooter() {
         <p className="bm-display site-footer__brand">Body Move</p>
         <p className="bm-muted">O movimento que transforma</p>
         <p className="site-footer__links">
-          <Link to="/style-guide">Style guide</Link>
+          {/* <Link to="/style-guide">Style guide</Link> */}
+          Developed by <a href='https://www.linkedin.com/in/p-martins/'>P. Martins</a>
           <span aria-hidden="true">·</span>
           <span>© {new Date().getFullYear()} Body Move Studio Funcional</span>
         </p>

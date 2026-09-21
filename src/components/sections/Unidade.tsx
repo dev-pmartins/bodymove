@@ -30,7 +30,7 @@ export function UnidadeSection({ contact }: Props) {
               <a
                 href={whatsappUrl(
                   contact.whatsappDigits,
-                  'Olá! Quero saber mais sobre a Body Move.',
+                  'Olá! Me interessei pela oportunidade de mudança e desejo saber mais sobre a Body Move.',
                 )}
               >
                 {contact.whatsapp}

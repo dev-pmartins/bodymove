@@ -9,7 +9,7 @@ export function WhatsAppFloat({ digits }: Props) {
   return (
     <a
       className="wa-float"
-      href={whatsappUrl(digits, 'Olá! Vim pelo site da Body Move.')}
+      href={whatsappUrl(digits, 'Olá! Me interessei pela oportunidade de mudança e desejo saber mais sobre a Body Move.')}
       target="_blank"
       rel="noreferrer"
       aria-label="Falar no WhatsApp"

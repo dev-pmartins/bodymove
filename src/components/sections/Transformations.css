@@ -13,7 +13,7 @@
 }
 
 .transform__photo {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 4;
   background-size: cover;
   background-position: center;
   filter: saturate(0.85) contrast(1.05);
