@@ -76,15 +76,47 @@
 }
 
 @media (max-width: 800px) {
+  .campaigns__stage {
+    min-height: 0;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+  }
+
   .campaigns__slide {
+    position: relative;
+    inset: auto;
+    display: none;
     grid-template-columns: 1fr;
+    opacity: 1;
+  }
+
+  .campaigns__slide.is-active {
+    display: grid;
   }
 
   .campaigns__media {
-    min-height: 180px;
+    min-height: 200px;
+    aspect-ratio: 16 / 10;
   }
 
   .campaigns__content {
     padding: var(--bm-space-5);
+    gap: var(--bm-space-3);
+  }
+
+  .campaigns__title {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+  }
+
+  .campaigns__sub {
+    font-size: var(--bm-text-sm);
+  }
+
+  .campaigns__dots {
+    position: static;
+    justify-content: center;
+    padding: var(--bm-space-3) 0 var(--bm-space-4);
+    background: var(--bm-surface);
   }
 }

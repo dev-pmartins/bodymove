@@ -11,7 +11,7 @@ export function WhatsAppFloat({ digits }: Props) {
       className="wa-float"
       href={whatsappUrl(digits, 'Olá! Me interessei pela oportunidade de mudança e desejo saber mais sobre a Body Move.')}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       aria-label="Falar no WhatsApp"
     >
       <svg viewBox="0 0 24 24" aria-hidden="true" width="28" height="28">

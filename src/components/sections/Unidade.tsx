@@ -32,6 +32,8 @@ export function UnidadeSection({ contact }: Props) {
                   contact.whatsappDigits,
                   'Olá! Me interessei pela oportunidade de mudança e desejo saber mais sobre a Body Move.',
                 )}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {contact.whatsapp}
               </a>
