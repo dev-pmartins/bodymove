@@ -17,12 +17,12 @@
 1. **Hero** — marca Body Move, slogan, CTA WhatsApp, parallax de fundo.
 2. **Campanhas / novidades** — slider (dados via Google Sheets).
 3. **Produtos** — Treinamento funcional · Musculação · Judô.
-4. **Treino do dia** — grade do dia (dados via Google Sheets).
+4. **Conheça nosso espaço** — galeria do studio (fotos estáticas).
 5. **Casos de mudança** — depoimentos + fotos before/after.
 6. **Instagram** — últimas publicações.
 7. **Unidade** — endereço, Maps, horários, redes, WhatsApp flutuante/footer.
 
-> Motivo da ordem: primeiro converter (hero + campanhas), depois explicar oferta (produtos), reforçar rotina (treino), prova social (casos + IG) e fechar com visita física (unidade).
+> Motivo da ordem: primeiro converter (hero + campanhas), depois explicar oferta (produtos), mostrar o lugar, prova social (casos + IG) e fechar com visita física (unidade).
 
 ## Seções e fontes de dados
 
@@ -31,7 +31,7 @@
 | Hero | Marca, slogan, CTA | Estático no código | — |
 | Slider campanhas | Título, imagem, texto, link WA | Google Sheets (CSV publicado) | Sem backend |
 | Produtos | 3 modalidades | Estático | Pode virar planilha depois |
-| Treino do dia | Exercícios / foco do dia | Google Sheets (CSV publicado) | Mesmo padrão do slider |
+| Conheça nosso espaço | Galeria do studio | Estático (`public/images/espaco/`) | CTA WhatsApp visita |
 | Casos de mudança | Foto + depoimento | Estático ou Sheets | Cliente fornece mídia |
 | Instagram | Grid de posts | API Instagram (ver riscos) | Pode precisar proxy serverless |
 | Unidade | Endereço + Maps | Estático | [Maps](https://www.google.com/maps/search/?api=1&query=Av.+Tiradentes,+2150+-+Jardim+Santa+Edwirges,+Guarulhos+-+SP,+07113-001) |

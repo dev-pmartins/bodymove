@@ -4,15 +4,15 @@ import { SiteFooter } from '../components/layout/SiteFooter'
 import { WhatsAppFloat } from '../components/layout/WhatsAppFloat'
 import { CampaignSlider } from '../components/sections/CampaignSlider'
 import { ProductsSection } from '../components/sections/Products'
-import { TreinoDoDiaSection } from '../components/sections/TreinoDoDia'
+import { EspacoSection } from '../components/sections/Espaco'
 import { TransformationsSection } from '../components/sections/Transformations'
 import { InstagramFeedSection } from '../components/sections/InstagramFeed'
 import { UnidadeSection } from '../components/sections/Unidade'
 import { Button } from '../components/ui/Button'
 import { mockProducts } from '../data/mock/products'
-import { mockTreinoDoDia } from '../data/mock/treino'
 import { mockTransformations } from '../data/mock/transformations'
 import { mockSiteContent } from '../data/mock/siteContent'
+import { espacoPhotos } from '../data/mock/espaco'
 import { useCms } from '../hooks/useCms'
 import { useInstagramFeed } from '../hooks/useInstagramFeed'
 import { whatsappUrl } from '../lib/links'
@@ -23,12 +23,15 @@ export function HomePage() {
   const ig = useInstagramFeed()
 
   const content = cms.status === 'ready' ? cms.content : mockSiteContent
-  const treino = cms.status === 'ready' ? cms.treino : mockTreinoDoDia
   const igPosts = ig.status === 'loading' ? [] : ig.data
   const igLoading = ig.status === 'loading'
   const waHref = whatsappUrl(
     content.contact.whatsappDigits,
     'Olá! Me interessei pela oportunidade de mudança e desejo saber mais sobre a Body Move.',
+  )
+  const visitHref = whatsappUrl(
+    content.contact.whatsappDigits,
+    'Olá! Quero agendar uma visita para conhecer o espaço da Body Move.',
   )
 
   return (
@@ -75,7 +78,7 @@ export function HomePage() {
 
         <CampaignSlider slides={content.slides} />
         <ProductsSection products={mockProducts} />
-        <TreinoDoDiaSection treino={treino} />
+        <EspacoSection photos={espacoPhotos} whatsappHref={visitHref} />
         <TransformationsSection items={mockTransformations} />
         <InstagramFeedSection posts={igPosts} loading={igLoading} />
         <UnidadeSection contact={content.contact} />
