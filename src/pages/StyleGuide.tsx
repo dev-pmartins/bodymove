@@ -204,7 +204,7 @@ export function StyleGuidePage() {
               <strong>Produtos</strong> — Funcional · Musculação · Judô
             </li>
             <li>
-              <strong>Treino do dia</strong> — grade (Google Sheets)
+              <strong>Conheça nosso espaço</strong> — galeria do studio
             </li>
             <li>
               <strong>Casos de mudança</strong> — depoimentos / fotos

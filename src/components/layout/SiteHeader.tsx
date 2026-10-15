@@ -4,7 +4,7 @@ import './SiteHeader.css'
 const links = [
   { href: '#campanhas', label: 'Campanhas' },
   { href: '#modalidades', label: 'Modalidades' },
-  { href: '#treino', label: 'Treino' },
+  { href: '#espaco', label: 'Espaço' },
   { href: '#casos', label: 'Mudanças' },
   { href: '#instagram', label: 'Instagram' },
   { href: '#unidade', label: 'Unidade' },
