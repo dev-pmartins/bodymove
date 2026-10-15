@@ -10,8 +10,6 @@ type Props = {
 export function EspacoSection({ photos, whatsappHref }: Props) {
   if (!photos.length) return null
 
-  const [featured, ...rest] = photos
-
   return (
     <section className="espaco section" id="espaco" aria-labelledby="espaco-title">
       <div className="bm-container">
@@ -24,23 +22,17 @@ export function EspacoSection({ photos, whatsappHref }: Props) {
           acompanhamento de perto — do funcional ao judô.
         </p>
 
-        <div className="espaco__mosaic">
-          <figure className="espaco__shot espaco__shot--featured">
-            <img src={featured.src} alt={featured.alt} loading="lazy" />
-          </figure>
-          {rest.map((photo) => (
-            <figure key={photo.id} className="espaco__shot">
-              <img src={photo.src} alt={photo.alt} loading="lazy" />
-            </figure>
-          ))}
-        </div>
-
-        {/* Mobile: carrossel horizontal */}
-        <ul className="espaco__rail" aria-label="Fotos do studio">
+        <ul className="espaco__gallery" aria-label="Fotos do studio">
           {photos.map((photo) => (
             <li key={photo.id}>
               <figure className="espaco__shot">
-                <img src={photo.src} alt={photo.alt} loading="lazy" />
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                  width={400}
+                  height={500}
+                />
               </figure>
             </li>
           ))}
