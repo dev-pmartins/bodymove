@@ -1,19 +1,22 @@
 .espaco__lead {
-  margin: calc(var(--bm-space-5) * -1) 0 var(--bm-space-6);
+  margin: calc(var(--bm-space-5) * -1) 0 var(--bm-space-5);
   max-width: 36rem;
 }
 
-.espaco__mosaic {
+.espaco__gallery {
+  --espaco-shot-h: clamp(160px, 22vh, 240px);
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--bm-space-3);
-  min-height: clamp(420px, 58vh, 640px);
 }
 
 .espaco__shot {
   margin: 0;
-  position: relative;
+  height: var(--espaco-shot-h);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.06);
   background: var(--bm-surface);
@@ -22,14 +25,11 @@
     box-shadow var(--bm-duration) var(--bm-ease-out);
 }
 
-.espaco__shot--featured {
-  grid-row: 1 / -1;
-}
-
 .espaco__shot img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
   transition: transform var(--bm-duration-slow) var(--bm-ease-out);
 }
@@ -40,32 +40,22 @@
 }
 
 .espaco__shot:hover img {
-  transform: scale(1.03);
-}
-
-.espaco__rail {
-  display: none;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  transform: scale(1.04);
 }
 
 .espaco__cta {
-  margin-top: var(--bm-space-6);
+  margin-top: var(--bm-space-5);
   display: flex;
   justify-content: flex-start;
 }
 
 @media (max-width: 800px) {
-  .espaco__mosaic {
-    display: none;
-  }
+  .espaco__gallery {
+    --espaco-shot-h: 200px;
 
-  .espaco__rail {
-    display: grid;
+    grid-template-columns: none;
     grid-auto-flow: column;
-    grid-auto-columns: minmax(72%, 280px);
-    gap: var(--bm-space-3);
+    grid-auto-columns: minmax(140px, 58vw);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding-bottom: var(--bm-space-2);
@@ -74,19 +64,11 @@
     scrollbar-color: var(--bm-acid) transparent;
   }
 
-  .espaco__rail li {
+  .espaco__gallery li {
     scroll-snap-align: start;
-  }
-
-  .espaco__rail .espaco__shot {
-    aspect-ratio: 3 / 4;
   }
 
   .espaco__cta {
     justify-content: center;
-  }
-
-  .espaco__lead {
-    text-align: left;
   }
 }
