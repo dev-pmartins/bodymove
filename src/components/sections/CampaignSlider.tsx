@@ -44,7 +44,7 @@ export function CampaignSlider({ slides }: Props) {
               <div className="campaigns__content">
                 <h3 className="bm-display campaigns__title">{slide.title}</h3>
                 {slide.subtitle ? (
-                  <p className="campaigns__sub">{slide.subtitle}</p>
+                  <p className="campaigns__sub" dangerouslySetInnerHTML={{ __html: slide.subtitle }} />
                 ) : null}
                 <Button href={slide.linkUrl} variant="primary">
                   {slide.ctaLabel || 'Saiba mais'}
