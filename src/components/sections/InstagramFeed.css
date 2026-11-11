@@ -21,6 +21,7 @@
 }
 
 .ig__item {
+  position: relative;
   display: block;
   aspect-ratio: 1;
   overflow: hidden;
@@ -28,6 +29,22 @@
   transition:
     border-color var(--bm-duration) var(--bm-ease-out),
     box-shadow var(--bm-duration) var(--bm-ease-out);
+}
+
+.ig__badge {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.55rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.72);
+  color: var(--bm-acid);
+  font-size: 0.7rem;
+  line-height: 1;
+  border: 1px solid var(--bm-border-strong);
 }
 
 .ig__item img {

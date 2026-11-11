@@ -36,4 +36,11 @@ export const dataConfig = {
   instagramProfileUrl:
     (import.meta.env.VITE_INSTAGRAM_PROFILE_URL as string) ||
     'https://www.instagram.com/',
+
+  /** Cache do feed IG (ms). Padrão: mesmo TTL do CMS (1 min). */
+  instagramCacheTtlMs: parseTtlMs(
+    import.meta.env.VITE_INSTAGRAM_CACHE_TTL_MS,
+    parseTtlMs(import.meta.env.VITE_CMS_CACHE_TTL_MS, 60_000),
+  ),
+  instagramCacheKey: 'bodymove:instagram:v1',
 }

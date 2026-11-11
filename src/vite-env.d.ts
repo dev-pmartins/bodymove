@@ -9,6 +9,7 @@ interface ImportMetaEnv {
   readonly VITE_GOOGLE_SHEET_CSV_URL?: string
   readonly VITE_INSTAGRAM_FEED_URL?: string
   readonly VITE_INSTAGRAM_PROFILE_URL?: string
+  readonly VITE_INSTAGRAM_CACHE_TTL_MS?: string
 }
 
 interface ImportMeta {

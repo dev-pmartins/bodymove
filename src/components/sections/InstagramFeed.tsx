@@ -26,6 +26,13 @@ export function InstagramFeedSection({ posts, loading }: Props) {
 
         {loading ? (
           <p className="bm-muted">Carregando publicações…</p>
+        ) : posts.length === 0 ? (
+          <p className="bm-muted">
+            Nenhuma publicação disponível no momento.{' '}
+            <a href={dataConfig.instagramProfileUrl} target="_blank" rel="noopener noreferrer">
+              Ver no Instagram
+            </a>
+          </p>
         ) : (
           <ul className="ig__grid">
             {posts.map((post) => (
@@ -34,10 +41,15 @@ export function InstagramFeedSection({ posts, loading }: Props) {
                   className="ig__item"
                   href={post.permalink}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   title={post.caption || 'Abrir no Instagram'}
                 >
                   <img src={post.mediaUrl} alt={post.caption || ''} loading="lazy" />
+                  {post.mediaType === 'VIDEO' || post.mediaType === 'REELS' ? (
+                    <span className="ig__badge" aria-hidden="true">
+                      ▶
+                    </span>
+                  ) : null}
                 </a>
               </li>
             ))}

@@ -64,7 +64,9 @@ Modo: `VITE_SITE_CONTENT_MODE=live` (padrão)
 ### Instagram
 
 - Mock: `src/data/mock/instagram.ts`
-- Live: `VITE_INSTAGRAM_MODE=live` + `VITE_INSTAGRAM_FEED_URL` (proxy JSON)
+- Live: `VITE_INSTAGRAM_MODE=live` + `VITE_INSTAGRAM_FEED_URL` (proxy Apps Script)
+- **Token nunca no Vite** — ver `docs/INSTAGRAM.md` e `docs/instagram-proxy-apps-script.gs`
+- Cache localStorage: `bodymove:instagram:v1` (TTL configurável)
 - Adapter: `src/integrations/instagram.ts`
 
 ## Fora deste modelo (sem sistema)

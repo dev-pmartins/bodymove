@@ -62,4 +62,5 @@ export type InstagramPost = {
   mediaUrl: string
   caption?: string
   timestamp?: string
+  mediaType?: string
 }
